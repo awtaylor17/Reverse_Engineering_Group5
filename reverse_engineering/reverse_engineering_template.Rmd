@@ -96,9 +96,7 @@ party_summary
 
 * **Sentence text**: Overall, 51.7 percent of all contributions by WNBA owners went to Democrats, with 42.3 percent going to Republicans.
 
-* **Analysis summary**: [Write up two to three sentences describing the results of your analysis.  Were you able to confirm the finding? If not, why not?]
-
-I was able to confirm that 51.7% of the donations by WNBA owners went to Democrats and that 42.3% of WNBA donations went to Republicans. One important thing to note that I discovered during my analysis is that, when the article says "all contributions" it means the total amount of money donated as opposed to the quantity of donations. 
+* **Analysis summary**:I was able to confirm that 51.7% of the donations by WNBA owners went to Democrats and that 42.3% of WNBA donations went to Republicans. One important thing to note that I discovered during my analysis is that, when the article says "all contributions" it means the total amount of money donated as opposed to the quantity of donations. 
 
 
 
