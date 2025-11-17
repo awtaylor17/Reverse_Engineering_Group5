@@ -128,7 +128,7 @@ WNBA_Contribs
 
 ```
 
-### Sentence 3 - * **Sentence text**: Thirteen owners have contributed directly to Trump’s campaign or Trump super PACs in the 2020 election cycle, with contributions adding up to $1,746,423… By contrast, 20 owners have contributed directly to Biden or Biden’s super PACs, though at smaller totals, with overall contributions equaling $405,745.
+### Sentence 3 - * Devin: Thirteen owners have contributed directly to Trump’s campaign or Trump super PACs in the 2020 election cycle, with contributions adding up to $1,746,423… By contrast, 20 owners have contributed directly to Biden or Biden’s super PACs, though at smaller totals, with overall contributions equaling $405,745.
 
 * **Analysis summary**: I found that there is actually 12 owner/ owner groups that donated to Trump's campaign or his Super PACS for the 2020 campaign, maybe there is a hidden recipent name that was for Trump that I didn't consider. The contributions add up to $1,544,421. 
 
