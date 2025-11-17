@@ -88,7 +88,6 @@ party_summary <- party_summary |> arrange(desc(total_donated))
 
 party_summary
 
- 
 
 ```
 
@@ -175,7 +174,7 @@ BidenTotal2020 |> summarize(total_amount = sum(amount))
 # Display results of code below this codeblock
 
 BidenTotal2020
-
+```
 
 
 ### Sentence 4 - Alex
@@ -255,25 +254,33 @@ nrow(Majority_Dem)
 
 ### Sentence 5 - Jordan
 
-* **Sentence text**: “Forty owners account for more than $40 million — more than 85 percent of all contributions. And looking specifically at these big spenders, it’s clear where their allegiances lie: 77.7 percent of that $40 million went to Republican causes or candidates, with 18.8 percent going to Democrats.” 
-* **Analysis summary**:This paragraph displays a statistic that slices the data and looks at the top donors. The github data from the article helps to list the owners and their sport teams that have a concentrated spending power. The analysis could be easy by just filtering the minimum spending amount to only display those donors. Either the data can be grouped by donations, or just the owners. 
+* **Sentence text**: “Thirteen owners have contributed directly to Trump’s campaign or Trump super PACs in the 2020 election cycle, with contributions adding up to $1,746,423… By contrast, 20 owners have contributed directly to Biden or Biden’s super PACs, though at smaller totals, with overall contributions equaling $405,745."
+* **Analysis summary**:This sentence is important because it ties these political contributions directly to the major candidates in a recent election. The analysis for this also seems to be fairly straightforward to find using the filter(), group_by() and summarise() functions. 
 
 
 
 
 ```{r}
-owner_totals <- sports_donations |> 
-  group_by(owner) |> 
-  summarize(total_donated = sum(amount, na.rm = TRUE)) |> 
-  arrange(desc(total_donated))
-top40_owners <- owner_totals |> 
-  slice_max(order_by = total_donated, n = 40)
-sports_donations |> 
-  semi_join(top40_owners, by = "owner") |> 
-  group_by(party) |> 
-  summarize(
-    total_donated = sum(amount, na.rm = TRUE),
-    percent = total_donated / sum(total_donated) * 100
-  )
+library(dplyr)
+library(stringr)
+
+sports_donations_2020 <- sports_donations |>
+  filter(election_year == 2020)
+
+
+sports_donations_2020 <- sports_donations_2020 |>
+  mutate(recipient_lower = tolower(recipient))
+
+
+sports_donations_2020 <- sports_donations_2020 |>
+  mutate(candidate = case_when(
+    str_detect(recipient_lower, "trump") ~ "trump",
+    str_detect(recipient_lower, "biden") ~ "biden",
+    TRUE ~ NA_character_
+  ))
+
+sports_donations_2020 <- sports_donations_2020 |>
+  filter(!is.na(candidate))
+
 ```
 -30-
