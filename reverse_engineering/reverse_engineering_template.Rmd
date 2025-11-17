@@ -279,6 +279,8 @@ sports_donations |>
   mutate(
     percent = total_donated / sum(total_donated) * 100
   )
-
+#The total donation amount of the top 40 owners 
+top40total<- sum(owner_totals$total_donated, na.rm = TRUE)
+ top40total 
 ```
 -30-
